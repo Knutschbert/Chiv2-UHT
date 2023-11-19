@@ -34,6 +34,7 @@
 
 class UCloudBlockRecentPlayers;
 class UTBLScreenManager;
+class UTBLVOIPPermissionsChecker;
 class UUserWidget;
 
 UCLASS(Blueprintable, NonTransient)
@@ -45,6 +46,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString MostRecentServerPassword;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsCommunicationAllowed;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnFriendsListsUpdated OnFriendsListsUpdated;
@@ -121,6 +125,10 @@ public:
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UTBLScreenManager* ActiveScreenManager;
+    
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UTBLVOIPPermissionsChecker* VOIPPermissionsChecker;
     
 public:
     UTBLLocalPlayer();
@@ -227,6 +235,9 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FString GetNickname() const;
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetMaxPartySize();
+    
     UFUNCTION(BlueprintCallable)
     bool GetIsPartyInMatchmakingQueue();
     
@@ -246,6 +257,9 @@ private:
 public:
     UFUNCTION(BlueprintCallable, Exec)
     void CopyInfo();
+    
+    UFUNCTION(BlueprintCallable)
+    void CheckLeaderRejoinPartyGame(bool bCheckPartyMemberLeader);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanLinkEpicAccount(int32 LocalUserNum) const;

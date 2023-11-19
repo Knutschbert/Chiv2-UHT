@@ -35,9 +35,6 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TMap<FString, UPartyListEntry*> IdToEntryMap;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    uint8 MaxPartySize;
-    
 public:
     UPartyList();
 protected:

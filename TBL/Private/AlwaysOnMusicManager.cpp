@@ -28,6 +28,6 @@ AAlwaysOnMusicManager::AAlwaysOnMusicManager() {
     this->SongIndex = -1;
     this->PreviousAlwaysOnMusicState = EAlwaysOnMusicState::None;
     this->IsMusicPlaying = false;
-    this->RecentSongs.AddDefaulted(1);
+    this->RecentSongs.AddDefaulted(2);
 }
 

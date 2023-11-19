@@ -321,6 +321,9 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsControllerMounted(AController* Controller, TSubclassOf<ASiegeEngine> SiegeEngineClass);
     
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
+    static bool IsCommunityThirdPartyServer(UObject* WorldContextObject);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsBot(AActor* Actor);
     
@@ -570,7 +573,7 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static void GetDisplayInfoFromCharacterClass(TSubclassOf<ATBLCharacter> CharacterClass, FCharacterDisplayInfo& DisplayInfo);
     
-    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    UFUNCTION(BlueprintCallable, meta=(WorldContext="WorldContextObject"))
     static UTBLDialogManager* GetDialogManager(UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
@@ -617,6 +620,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
     static FString GetCurrentServerNameString(UObject* WorldContextObject);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext="WorldContextObject"))
+    static UTBLDialogManager* GetCurrentDialogManager(UObject* WorldContextObject);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString GetCurrencyIdReal();

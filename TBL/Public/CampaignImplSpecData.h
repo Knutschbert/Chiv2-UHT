@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-//CROSS-MODULE INCLUDE V2: -ModuleName=CoreUObject -ObjectName=DateTime -FallbackName=DateTime
 #include "CampaignLevel.h"
+#include "DateTimeRange.h"
 #include "CampaignImplSpecData.generated.h"
 
 class UTexture2D;
@@ -33,10 +33,7 @@ public:
     TSoftObjectPtr<UTexture2D> TitleImage;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FDateTime AvailableSince;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FDateTime AvailableUntil;
+    FDateTimeRange DateTimeRange;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UVirtualGoodCampaign> PremiumCampaignVirtualGood;

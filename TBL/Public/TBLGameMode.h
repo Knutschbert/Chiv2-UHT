@@ -206,6 +206,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
     bool bHorseCompatibleServer;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    TArray<FString> CommunityServerAdminIds;
+    
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseOpenLoadout;
     
@@ -353,6 +356,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
     bool BlockVoteKicking;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, GlobalConfig, meta=(AllowPrivateAccess=true))
+    bool IsCommunityServer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EFaction Victor;
@@ -518,7 +524,7 @@ public:
     void KickByName(const FString& PlayerName, const FString& Reason, int32 BanTime);
     
     UFUNCTION(BlueprintCallable, Exec)
-    void KickById(const FString& PlayerId, const FString& Reason, float Time);
+    void KickById(const FUniqueNetIdRepl& UniqueId, const FString& Reason);
     
     UFUNCTION(BlueprintCallable, Exec)
     void KickAllPlayers();

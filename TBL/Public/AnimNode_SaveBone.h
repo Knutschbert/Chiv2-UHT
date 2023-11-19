@@ -5,7 +5,7 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=BoneReference -FallbackName=BoneReference
 #include "AnimNode_SaveBone.generated.h"
 
-class UStructProperty;
+class UStruct;
 
 USTRUCT(BlueprintType)
 struct TBL_API FAnimNode_SaveBone : public FAnimNode_SkeletalControlBase {
@@ -19,7 +19,7 @@ public:
     
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    UStructProperty* TransformProperty;
+    UStruct* TransformPropertyOwner;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FTransform PreviousSourceBoneTM;

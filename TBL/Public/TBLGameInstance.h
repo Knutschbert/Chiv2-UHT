@@ -402,8 +402,8 @@ public:
     UFUNCTION(BlueprintCallable)
     bool IsFirstLoadCompleted();
     
-    UFUNCTION(BlueprintCallable)
-    bool IsCrossplayBlockedByOS();
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsCrossplayBlockedByOS() const;
     
 private:
     UFUNCTION(BlueprintCallable)
@@ -433,6 +433,9 @@ protected:
     void Disconnect(UObject* WorldContextObject);
     
 private:
+    UFUNCTION(BlueprintCallable)
+    void ClickedOnRejoin();
+    
     UFUNCTION(BlueprintCallable)
     void ClickedOnMessage();
     

@@ -192,5 +192,6 @@ AHorse::AHorse() {
     this->LastMountedFaction = EFaction::None;
     this->bHorseGallopVoIgnoredOnce = false;
     this->LastHorseMountTime = 0.00f;
+    this->bDriverRootUpdating = false;
 }
 

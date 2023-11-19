@@ -59,6 +59,9 @@ public:
     void UnbindOnCompleted(const FOnQuestCompleteChanged& Delegate) override PURE_VIRTUAL(UnbindOnCompleted,);
     
     UFUNCTION(BlueprintCallable)
+    bool ShouldBeDisplayed() const override PURE_VIRTUAL(ShouldBeDisplayed, return false;);
+    
+    UFUNCTION(BlueprintCallable)
     bool IsUpcoming() const override PURE_VIRTUAL(IsUpcoming, return false;);
     
     UFUNCTION(BlueprintCallable)
@@ -69,6 +72,12 @@ public:
     
     UFUNCTION(BlueprintCallable)
     bool IsExpired() const override PURE_VIRTUAL(IsExpired, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    bool IsDisplayPending() const override PURE_VIRTUAL(IsDisplayPending, return false;);
+    
+    UFUNCTION(BlueprintCallable)
+    bool IsDisplayOver() const override PURE_VIRTUAL(IsDisplayOver, return false;);
     
     UFUNCTION(BlueprintCallable)
     bool IsComplete() const override PURE_VIRTUAL(IsComplete, return false;);

@@ -4,6 +4,13 @@ int32 UCurrentPlatformSettings::SetStreamingPoolSize(const FString& LevelName, b
     return 0;
 }
 
+void UCurrentPlatformSettings::SetCascadeComponentParameters(UParticleSystemComponent* CascadeComponent) {
+}
+
+void UCurrentPlatformSettings::SetCascadeActorParameters(AEmitter* CascadeEmitter) {
+}
+
 UCurrentPlatformSettings::UCurrentPlatformSettings() {
+    this->PlatformOverrides.AddDefaulted(3);
 }
 

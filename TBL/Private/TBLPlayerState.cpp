@@ -116,6 +116,10 @@ bool ATBLPlayerState::IsInParty() {
     return false;
 }
 
+bool ATBLPlayerState::IsActivePlayerInGame() const {
+    return false;
+}
+
 bool ATBLPlayerState::GetPlayerVIPStatus() {
     return false;
 }
@@ -251,7 +255,6 @@ ATBLPlayerState::ATBLPlayerState() {
     this->CachedMeshFaction = EFaction::Agatha;
     this->CachedMesh = NULL;
     this->bWantsOnlineLoad = true;
-    this->bReplicateOnlineAccount = false;
     this->BotSelectedAssetsType = EAudioClassType::MAX;
     this->HasBeenAutoBalanced = false;
     this->bCustomizationUploaded = false;

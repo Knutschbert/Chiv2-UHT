@@ -224,6 +224,10 @@ FSprintState UTBLCharacterMovement::GetSprintState() {
     return FSprintState{};
 }
 
+bool UTBLCharacterMovement::GetSprintLocked() const {
+    return false;
+}
+
 FName UTBLCharacterMovement::GetMovementState() const {
     return NAME_None;
 }

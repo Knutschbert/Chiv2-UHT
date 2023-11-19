@@ -3,22 +3,13 @@
 //CROSS-MODULE INCLUDE V2: -ModuleName=Engine -ObjectName=WorldSubsystem -FallbackName=WorldSubsystem
 #include "CampaignSubsystem.generated.h"
 
-class ATBLPlayerController;
 class UCampaignImpl;
-class UCampaignList;
-class UObject;
 
 UCLASS(Blueprintable, Config=Game)
 class UCampaignSubsystem : public UWorldSubsystem {
     GENERATED_BODY()
 public:
 private:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    TMap<ATBLPlayerController*, UCampaignList*> CampaignLists;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<UObject*> BackendCampaigns;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UCampaignImpl*> LocalCampaigns;
     

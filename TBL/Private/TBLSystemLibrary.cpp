@@ -253,6 +253,10 @@ bool UTBLSystemLibrary::IsControllerMounted(AController* Controller, TSubclassOf
     return false;
 }
 
+bool UTBLSystemLibrary::IsCommunityThirdPartyServer(UObject* WorldContextObject) {
+    return false;
+}
+
 bool UTBLSystemLibrary::IsBot(AActor* Actor) {
     return false;
 }
@@ -644,6 +648,10 @@ UCustomizationComponent* UTBLSystemLibrary::GetCustomizationComponent(AActor* Ac
 
 FString UTBLSystemLibrary::GetCurrentServerNameString(UObject* WorldContextObject) {
     return TEXT("");
+}
+
+UTBLDialogManager* UTBLSystemLibrary::GetCurrentDialogManager(UObject* WorldContextObject) {
+    return NULL;
 }
 
 FString UTBLSystemLibrary::GetCurrencyIdReal() {

@@ -918,6 +918,9 @@ void ATBLPlayerController::PendingSpawnExpired(ASpawner* PendingSpawner) {
 void ATBLPlayerController::PartySay(FString& Msg) {
 }
 
+void ATBLPlayerController::PartyGuestRetryMigrateToNewMatchmakingServer(AActor* DestroyedActor) {
+}
+
 void ATBLPlayerController::OwningTeamChanged(ATBLTeam* NewOwningTeam) {
 }
 

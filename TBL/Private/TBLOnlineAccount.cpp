@@ -6,6 +6,7 @@ FTBLOnlineAccount::FTBLOnlineAccount() {
     this->bLoaded = false;
     this->TotalOutstandingRequests = 0;
     this->bDidQueryUserInfo = false;
+    this->bIsCommunityServerAdmin = false;
     this->PlayerState = NULL;
 }
 

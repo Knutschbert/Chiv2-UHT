@@ -1531,6 +1531,9 @@ public:
     UFUNCTION(BlueprintCallable, Exec)
     void PartySay(FString& Msg);
     
+    UFUNCTION(BlueprintCallable)
+    void PartyGuestRetryMigrateToNewMatchmakingServer(AActor* DestroyedActor);
+    
 protected:
     UFUNCTION(BlueprintCallable)
     void OwningTeamChanged(ATBLTeam* NewOwningTeam);

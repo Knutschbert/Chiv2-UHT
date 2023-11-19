@@ -240,6 +240,7 @@ void ATBLGameState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLif
     DOREPLIFETIME(ATBLGameState, PostMatchEndTime);
     DOREPLIFETIME(ATBLGameState, PostMatchMatchmakingStartTimeServer);
     DOREPLIFETIME(ATBLGameState, bBlockVoteKicking);
+    DOREPLIFETIME(ATBLGameState, bIsCommunityServer);
 }
 
 ATBLGameState::ATBLGameState() {
@@ -279,6 +280,7 @@ ATBLGameState::ATBLGameState() {
     this->PostMatchEndTime = -1.00f;
     this->PostMatchMatchmakingStartTimeServer = -1.00f;
     this->bBlockVoteKicking = 0;
+    this->bIsCommunityServer = 0;
     this->bWasNotifiedAboutWaitingToStart = false;
     this->bDelayGarbageCollection = false;
 }

@@ -189,9 +189,6 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bWantsOnlineLoad;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bReplicateOnlineAccount;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     TEnumAsByte<EAudioClassType::Type> BotSelectedAssetsType;
     
@@ -465,6 +462,9 @@ protected:
 public:
     UFUNCTION(BlueprintCallable)
     bool IsInParty();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsActivePlayerInGame() const;
     
     UFUNCTION(BlueprintCallable)
     bool GetPlayerVIPStatus();

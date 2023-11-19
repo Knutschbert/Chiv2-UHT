@@ -115,7 +115,7 @@ bool UTBLGameInstance::IsFirstLoadCompleted() {
     return false;
 }
 
-bool UTBLGameInstance::IsCrossplayBlockedByOS() {
+bool UTBLGameInstance::IsCrossplayBlockedByOS() const {
     return false;
 }
 
@@ -145,6 +145,9 @@ FName UTBLGameInstance::GetCurrentState() const {
 }
 
 void UTBLGameInstance::Disconnect(UObject* WorldContextObject) {
+}
+
+void UTBLGameInstance::ClickedOnRejoin() {
 }
 
 void UTBLGameInstance::ClickedOnMessage() {

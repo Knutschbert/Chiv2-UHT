@@ -6,7 +6,7 @@ UGeneralProjectSettings::UGeneralProjectSettings() {
     this->CopyrightNotice = TEXT("Copyright 2017-2018 Torn Banner Studios Inc. All Rights Reserved.");
     this->Homepage = TEXT("tornbanner.com");
     this->ProjectName = TEXT("Chivalry 2");
-    this->ProjectVersion = TEXT("1.0.1.34");
+    this->ProjectVersion = TEXT("1.0.1.37");
     this->SupportContact = TEXT("contact@tornbanner.com");
     this->ProjectDisplayedTitle = FText::FromString(TEXT("Chivalry 2"));
     this->bShouldWindowPreserveAspectRatio = true;

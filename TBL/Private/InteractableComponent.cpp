@@ -123,5 +123,6 @@ UInteractableComponent::UInteractableComponent() {
     this->bShouldHaveHudMarker = true;
     this->bAutoPickupOnly = false;
     this->bHideInteractablePrompt = false;
+    this->bAllowVIPs = true;
 }
 

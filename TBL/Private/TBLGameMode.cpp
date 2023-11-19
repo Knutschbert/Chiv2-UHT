@@ -81,7 +81,7 @@ void ATBLGameMode::KickByNetIdWithTimer(const FUniqueNetIdRepl& UniqueId, const 
 void ATBLGameMode::KickByName(const FString& PlayerName, const FString& Reason, int32 BanTime) {
 }
 
-void ATBLGameMode::KickById(const FString& PlayerId, const FString& Reason, float Time) {
+void ATBLGameMode::KickById(const FUniqueNetIdRepl& UniqueId, const FString& Reason) {
 }
 
 void ATBLGameMode::KickAllPlayers() {
@@ -302,6 +302,7 @@ ATBLGameMode::ATBLGameMode() {
     this->AutoBalanceOptions.AddDefaulted(2);
     this->AutoBalancePlayerPriorityConfig.AddDefaulted(3);
     this->BlockVoteKicking = false;
+    this->IsCommunityServer = false;
     this->Victor = EFaction::None;
     this->LastPlayerSpawnTime = 0.00f;
     this->ConfigWarmupTime = 40;

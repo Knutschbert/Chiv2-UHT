@@ -138,6 +138,11 @@ ASpawner::ASpawner() {
     this->SpawnerScoreMultiplier = 1.00f;
     this->LastSpawnTime = -1.00f;
     this->PostSpawnPossesionTime = 2.50f;
+    this->ConstructableDestructionRadius = 250.00f;
+    this->ConstructableDestructionDistance = 500.00f;
+    this->HorseDestructionRadius = 250.00f;
+    this->HorseDestructionDistance = 500.00f;
+    this->bIsActive = false;
     this->bSkipPawnOverlapTest = false;
     this->bAllowInvalidSpawnLocation = false;
     this->SpawnWave = NULL;

@@ -667,6 +667,9 @@ public:
     FSprintState GetSprintState();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool GetSprintLocked() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FName GetMovementState() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

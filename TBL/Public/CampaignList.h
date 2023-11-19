@@ -24,18 +24,15 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FOnCampaignsChanged OnActiveCampaignChanged;
     
+    UPROPERTY(EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
+    int64 DevTimeOverride;
+    
 private:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString ActiveCampaignId;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<TScriptInterface<ICampaign>> AllCampaigns;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
-    TArray<UCampaignImpl*> AllCampaigns_New;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<UObject*> ActiveCampaigns;
+    TArray<UCampaignImpl*> AllCampaigns;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FPrimaryAssetId, FString> PremiumCampaignMap;
@@ -50,11 +47,6 @@ public:
     UFUNCTION(BlueprintCallable)
     TScriptInterface<ICampaign> SlotCampaign(TScriptInterface<ICampaign> Campaign);
     
-private:
-    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
-    void ServerSetActiveCampaign(const FString& ID, const FString& FriendlyName, int32 TotalXp, int32 RevisionXp, bool bIsPurchased);
-    
-public:
     UFUNCTION(BlueprintCallable)
     void OnTimedCampaignStatusChanged(UCampaignImpl* Campaign);
     

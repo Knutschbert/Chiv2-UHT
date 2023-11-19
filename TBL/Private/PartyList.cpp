@@ -19,6 +19,5 @@ UPartyList::UPartyList() {
     this->PartyList = NULL;
     this->PartyListEntryClass = NULL;
     this->SelfPartyEntry = NULL;
-    this->MaxPartySize = 4;
 }
 

@@ -7,8 +7,9 @@ UParticleSystem* AParticleLOD::GetCascadeTemplate() {
 
 AParticleLOD::AParticleLOD() {
     this->CascadeEffectComponent = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Emitter"));
-    this->SpawnScale = 1.00f;
-    this->Cull = 1.00f;
-    this->AlphaScale = 1.00f;
+    this->CascadeEffect = NULL;
+    this->bDebugMode = false;
+    this->CascadeEffect_Debug = NULL;
+    this->DebugScale = 100.00f;
 }
 

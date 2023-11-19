@@ -109,6 +109,10 @@ FString UTBLLocalPlayer::GetNickname() const {
     return TEXT("");
 }
 
+int32 UTBLLocalPlayer::GetMaxPartySize() {
+    return 0;
+}
+
 bool UTBLLocalPlayer::GetIsPartyInMatchmakingQueue() {
     return false;
 }
@@ -131,6 +135,9 @@ void UTBLLocalPlayer::FocusAccountLinkingWidget(UUserWidget* Widget) {
 void UTBLLocalPlayer::CopyInfo() {
 }
 
+void UTBLLocalPlayer::CheckLeaderRejoinPartyGame(bool bCheckPartyMemberLeader) {
+}
+
 bool UTBLLocalPlayer::CanLinkEpicAccount(int32 LocalUserNum) const {
     return false;
 }
@@ -149,6 +156,8 @@ void UTBLLocalPlayer::AcceptFriendInvitationFromPlayerExec(const FString& Player
 
 UTBLLocalPlayer::UTBLLocalPlayer() {
     this->CloudBlockRecentPlayers = CreateDefaultSubobject<UCloudBlockRecentPlayers>(TEXT("CloudBlockRecentPlayers"));
+    this->bIsCommunicationAllowed = true;
     this->ActiveScreenManager = NULL;
+    this->VOIPPermissionsChecker = NULL;
 }
 

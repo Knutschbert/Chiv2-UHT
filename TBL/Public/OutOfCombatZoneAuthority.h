@@ -60,10 +60,10 @@ protected:
     TMap<ACharacter*, FTimerHandle> ForgivenessTimerHandles;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSet<TSubclassOf<ATBLCharacter>> ConsideredCharacters;
+    TSet<TSubclassOf<ATBLCharacter>> SoftConsideredCharacters;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSet<TSubclassOf<ATBLCharacter>> IgnoredCharacters;
+    TSet<TSubclassOf<ATBLCharacter>> SoftIgnoredCharacters;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bDisabled;

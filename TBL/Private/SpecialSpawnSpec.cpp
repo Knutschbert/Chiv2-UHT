@@ -48,6 +48,7 @@ USpecialSpawnSpec::USpecialSpawnSpec() {
     this->bJoinAfterDeath = false;
     this->bAutospawnAllowed = false;
     this->bPromptedSpawn = true;
+    this->bShouldCheckClassRestriction = true;
     this->bUseSubclassesOfAllowedClasses = false;
     this->bIgnorePlayerOwnership = false;
     this->bForceBotsUseLoadout = false;

@@ -5,12 +5,6 @@ TScriptInterface<ICampaign> UCampaignList::SlotCampaign(TScriptInterface<ICampai
     return NULL;
 }
 
-void UCampaignList::ServerSetActiveCampaign_Implementation(const FString& ID, const FString& FriendlyName, int32 TotalXp, int32 RevisionXp, bool bIsPurchased) {
-}
-bool UCampaignList::ServerSetActiveCampaign_Validate(const FString& ID, const FString& FriendlyName, int32 TotalXp, int32 RevisionXp, bool bIsPurchased) {
-    return true;
-}
-
 void UCampaignList::OnTimedCampaignStatusChanged(UCampaignImpl* Campaign) {
 }
 
@@ -73,9 +67,11 @@ void UCampaignList::AbandonAllCampaigns() {
 void UCampaignList::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
-    DOREPLIFETIME(UCampaignList, AllCampaigns_New);
+    DOREPLIFETIME(UCampaignList, DevTimeOverride);
+    DOREPLIFETIME(UCampaignList, AllCampaigns);
 }
 
 UCampaignList::UCampaignList() {
+    this->DevTimeOverride = -1;
 }
 
